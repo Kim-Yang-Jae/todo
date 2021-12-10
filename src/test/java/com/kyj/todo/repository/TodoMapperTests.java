@@ -21,7 +21,7 @@ public class TodoMapperTests {
     @Autowired
     private TodoMapper mapper;
 
-    @DisplayName("Todo upsert 테스트")
+    @DisplayName("Todo upsert test")
     @Test
     public void upsert_test() {
         Todo todo = Todo.builder()
@@ -45,5 +45,24 @@ public class TodoMapperTests {
         Assertions.assertEquals(todo.isCompletedYn(), foundTodo.isCompletedYn());
         Assertions.assertEquals(todo.getCreatedAt(), foundTodo.getCreatedAt());
         Assertions.assertEquals(todo.getUpdatedAt(), foundTodo.getUpdatedAt());
+    }
+
+    @DisplayName("Todo delete test")
+    @Test
+    public void delete_test() {
+        Todo todo = Todo.builder()
+                .id(IdGenerator.getInstance().generate())
+                .content("test")
+                .expiredAt(LocalDateTime.of(2021, 12, 10, 10, 11, 12))
+                .importantYn(true)
+                .completedYn(false)
+                .createdAt(LocalDateTime.of(2021, 12, 9, 20, 0, 0))
+                .updatedAt(LocalDateTime.of(2021, 12, 9, 20, 0, 0))
+                .build();
+        mapper.upsert(todo);
+        mapper.delete(todo.getId());
+
+        Todo foundTodo = mapper.findOne(todo.getId());
+        Assertions.assertNull(foundTodo);
     }
 }
