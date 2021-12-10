@@ -1,0 +1,23 @@
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://database-1.c9jcegxaqoos.ap-northeast-2.rds.amazonaws.com:3306/todo_box?&serverTimezone=UTC&autoReconnect=true&allowMultiQueries=true&characterEncoding=UTF-8
+    username: admin
+    password: 1qaz2wsx
+
+---
+spring:
+  config:
+    activate:
+      on-profile: real
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://database-1.c9jcegxaqoos.ap-northeast-2.rds.amazonaws.com:3306/todo_box?&serverTimezone=UTC&autoReconnect=true&allowMultiQueries=true&characterEncoding=UTF-8
+    username: admin
+    password: 1qaz2wsx

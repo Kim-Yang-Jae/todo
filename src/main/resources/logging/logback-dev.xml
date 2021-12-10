@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+    <include resource="logging/common.xml"/>
+
+    <root level="info">
+        <appender-ref ref="APP_ACTION"/>
+        <appender-ref ref="APP_ERROR"/>
+    </root>
+</configuration>

@@ -1,0 +1,12 @@
+spring:
+  profiles:
+    active: local
+    include:
+      - datasource
+      - mybatis
+      - logging
+  application:
+    name: todo
+
+server:
+  port: 8010

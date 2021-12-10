@@ -1,0 +1,18 @@
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+
+logging:
+  config: classpath:logging/logback-local.xml
+
+
+---
+spring:
+  config:
+    activate:
+      on-profile: real
+
+logging:
+  config: classpath:logging/logback-local.xml

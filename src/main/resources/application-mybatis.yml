@@ -1,0 +1,5 @@
+mybatis:
+  type-aliases-package: com.kyj.todo.model.domain
+  mapper-locations: mybatis/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
