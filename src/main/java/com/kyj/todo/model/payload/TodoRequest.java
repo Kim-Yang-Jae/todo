@@ -1,23 +1,21 @@
 package com.kyj.todo.model.payload;
 
 
-import lombok.*;
-
-import java.time.LocalDateTime;
+import lombok.Data;
+import lombok.ToString;
 
 @Data
-@Builder
 @ToString
 public class TodoRequest {
-    private LocalDateTime createdAt;
-
-    private LocalDateTime updatedAt;
-
     private String content;
+
+    private long expiredAt;
 
     private boolean importantYn;
 
-    private LocalDateTime expiredAt;
-
     private boolean completedYn;
+
+    private long createdAt;
+
+    private long updatedAt;
 }

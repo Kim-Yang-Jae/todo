@@ -9,21 +9,21 @@ import java.time.LocalDateTime;
 @Builder
 @ToString
 public class Todo {
-    private long id;
+    private final long id;
 
     @NonNull
-    private String content;
+    private final String content;
 
     @NonNull
-    private LocalDateTime expiredAt;
+    private final LocalDateTime expiredAt;
 
-    private boolean importantYn;
+    private final boolean importantYn;
 
-    private boolean completedYn;
-
-    @NonNull
-    private LocalDateTime createdAt;
+    private final boolean completedYn;
 
     @NonNull
-    private LocalDateTime updatedAt;
+    private final LocalDateTime createdAt;
+
+    @NonNull
+    private final LocalDateTime updatedAt;
 }
