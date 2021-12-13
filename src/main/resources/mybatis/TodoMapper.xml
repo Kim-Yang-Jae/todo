@@ -9,12 +9,15 @@
             id,
             content,
             expired_at,
-            important_yn,
-            completed_yn,
+            important,
+            completed,
             created_at,
             updated_at
         FROM
             todo
+        WHERE
+            id &gt; #{index}
+        LIMIT #{size}
     </select>
 
     <select id="findOne" parameterType="_long" resultType="Todo">
@@ -22,8 +25,8 @@
             id,
             content,
             expired_at,
-            important_yn,
-            completed_yn,
+            important,
+            completed,
             created_at,
             updated_at
         FROM
@@ -38,23 +41,23 @@
             (id,
             content,
             expired_at,
-            important_yn,
-            completed_yn,
+            important,
+            completed,
             created_at,
             updated_at)
         VALUES
             (#{id},
             #{content},
             #{expiredAt},
-            #{importantYn},
-            #{completedYn},
+            #{important},
+            #{completed},
             #{createdAt},
             #{updatedAt})
         ON DUPLICATE KEY UPDATE
             content = #{content},
             expired_at = #{expiredAt},
-            important_yn = #{importantYn},
-            completed_yn = #{completedYn},
+            important = #{important},
+            completed = #{completed},
             updated_at = #{updatedAt}
     </insert>
 

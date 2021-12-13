@@ -5,6 +5,7 @@ import com.kyj.todo.exception.TodoException;
 import com.kyj.todo.model.TodoView;
 import com.kyj.todo.model.domain.Todo;
 import com.kyj.todo.model.payload.GetTodosResponse;
+import com.kyj.todo.model.payload.PaginationRequest;
 import com.kyj.todo.model.payload.SaveTodoResponse;
 import com.kyj.todo.model.payload.TodoRequest;
 import com.kyj.todo.repository.TodoMapper;
@@ -22,8 +23,11 @@ import java.util.stream.Collectors;
 public class TodoService {
     private final TodoMapper mapper;
 
-    public GetTodosResponse getTodos() {
-        List<Todo> todos = mapper.findAll();
+    public GetTodosResponse getTodos(Long lastTodoId, int count) {
+        PaginationRequest paginationRequest = (lastTodoId == null) ?
+                PaginationRequest.first(count) : PaginationRequest.next(lastTodoId, count);
+        List<Todo> todos = mapper.findAll(paginationRequest);
+
         List<TodoView> todoViews = todos.stream()
                 .map(TodoView::of)
                 .collect(Collectors.toList());

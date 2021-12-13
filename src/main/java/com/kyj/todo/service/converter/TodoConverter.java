@@ -13,8 +13,8 @@ public class TodoConverter {
                 .id(id)
                 .content(request.getContent())
                 .expiredAt(TimeUtils.toLocalDateTime(request.getExpiredAt()))
-                .importantYn(request.isImportantYn())
-                .completedYn(request.isCompletedYn())
+                .important(request.isImportant())
+                .completed(request.isCompleted())
                 .createdAt(TimeUtils.toLocalDateTime(request.getCreatedAt()))
                 .updatedAt(TimeUtils.toLocalDateTime(request.getUpdatedAt()))
                 .build();

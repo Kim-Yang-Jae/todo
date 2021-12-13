@@ -18,8 +18,11 @@ public class TodoController {
     private final TodoService service;
 
     @GetMapping("/")
-    public GetTodosResponse getTodos() {
-        return service.getTodos();
+    public GetTodosResponse getTodos(
+            @RequestParam(required = false) Long lastTodoId,
+            @RequestParam(required = false, defaultValue = "10") int count
+    ) {
+        return service.getTodos(lastTodoId, count);
     }
 
     @PutMapping("/")

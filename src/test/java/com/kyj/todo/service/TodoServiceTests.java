@@ -23,7 +23,7 @@ public class TodoServiceTests {
     @DisplayName("Todo 전체 조회 테스트")
     @Test
     public void get_todos_test() {
-        GetTodosResponse response = todoService.getTodos();
+        GetTodosResponse response = todoService.getTodos(null, 15);
         log.info("All Todos: {}", response.getTodos());
     }
 
@@ -33,8 +33,8 @@ public class TodoServiceTests {
         TodoRequest request = new TodoRequest();
         request.setContent("Todo test");
         request.setExpiredAt(1639200630053L);
-        request.setImportantYn(true);
-        request.setCompletedYn(false);
+        request.setImportant(true);
+        request.setCompleted(false);
         request.setCreatedAt(1639200630053L);
         request.setUpdatedAt(1639200630053L);
         SaveTodoResponse saveTodoResponse = todoService.saveTodo(request);
@@ -42,8 +42,8 @@ public class TodoServiceTests {
         TodoView todo = todoService.getTodo(saveTodoResponse.getId());
         Assertions.assertEquals(request.getContent(), todo.getContent());
         Assertions.assertEquals(TimeUtils.toLocalDateTime(request.getExpiredAt()), todo.getExpiredAt());
-        Assertions.assertEquals(request.isImportantYn(), todo.isImportantYn());
-        Assertions.assertEquals(request.isCompletedYn(), todo.isCompletedYn());
+        Assertions.assertEquals(request.isImportant(), todo.isImportant());
+        Assertions.assertEquals(request.isCompleted(), todo.isCompleted());
         Assertions.assertEquals(TimeUtils.toLocalDateTime(request.getCreatedAt()), todo.getCreatedAt());
         Assertions.assertEquals(TimeUtils.toLocalDateTime(request.getUpdatedAt()), todo.getUpdatedAt());
     }
@@ -54,8 +54,8 @@ public class TodoServiceTests {
         TodoRequest request = new TodoRequest();
         request.setContent("Todo test");
         request.setExpiredAt(1639200630053L);
-        request.setImportantYn(true);
-        request.setCompletedYn(false);
+        request.setImportant(true);
+        request.setCompleted(false);
         request.setCreatedAt(1639200630053L);
         request.setUpdatedAt(1639200630053L);
         SaveTodoResponse saveTodoResponse = todoService.saveTodo(request);

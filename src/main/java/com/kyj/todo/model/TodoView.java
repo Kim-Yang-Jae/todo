@@ -1,7 +1,9 @@
 package com.kyj.todo.model;
 
 import com.kyj.todo.model.domain.Todo;
-import lombok.*;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.ToString;
 
 import java.time.LocalDateTime;
 
@@ -15,9 +17,9 @@ public class TodoView {
 
     private LocalDateTime expiredAt;
 
-    private boolean importantYn;
+    private boolean important;
 
-    private boolean completedYn;
+    private boolean completed;
 
     private LocalDateTime createdAt;
 
@@ -28,8 +30,8 @@ public class TodoView {
                 .id(todo.getId())
                 .content(todo.getContent())
                 .expiredAt(todo.getExpiredAt())
-                .importantYn(todo.isImportantYn())
-                .completedYn(todo.isCompletedYn())
+                .important(todo.isImportant())
+                .completed(todo.isCompleted())
                 .createdAt(todo.getCreatedAt())
                 .updatedAt(todo.getUpdatedAt())
                 .build();

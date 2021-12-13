@@ -1,7 +1,10 @@
 package com.kyj.todo.model.domain;
 
 
-import lombok.*;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NonNull;
+import lombok.ToString;
 
 import java.time.LocalDateTime;
 
@@ -17,9 +20,9 @@ public class Todo {
     @NonNull
     private final LocalDateTime expiredAt;
 
-    private final boolean importantYn;
+    private final boolean important;
 
-    private final boolean completedYn;
+    private final boolean completed;
 
     @NonNull
     private final LocalDateTime createdAt;
