@@ -1,0 +1,10 @@
+springdoc:
+  default-produces-media-type: application/json
+  swagger-ui:
+    opperations-sorter: method
+    tag-sorter: alpha
+    path: /swagger-ui.html
+    disable-swagger-default-url: true
+    display-query-params-without-oauth2: true
+  paths-to-match:
+    - /api/**
