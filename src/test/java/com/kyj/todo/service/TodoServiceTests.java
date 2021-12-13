@@ -23,7 +23,7 @@ public class TodoServiceTests {
     @DisplayName("Todo 전체 조회 테스트")
     @Test
     public void get_todos_test() {
-        GetTodosResponse response = todoService.getTodos();
+        GetTodosResponse response = todoService.getTodos(null, 15);
         log.info("All Todos: {}", response.getTodos());
     }
 

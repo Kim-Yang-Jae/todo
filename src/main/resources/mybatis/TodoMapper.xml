@@ -15,6 +15,9 @@
             updated_at
         FROM
             todo
+        WHERE
+            id &gt; #{index}
+        LIMIT #{size}
     </select>
 
     <select id="findOne" parameterType="_long" resultType="Todo">
