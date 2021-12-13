@@ -17,7 +17,6 @@ import java.time.LocalDateTime;
 @MybatisTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 public class TodoMapperTests {
-
     @Autowired
     private TodoMapper mapper;
 
@@ -28,8 +27,8 @@ public class TodoMapperTests {
                 .id(IdGenerator.getInstance().generate())
                 .content("test")
                 .expiredAt(LocalDateTime.of(2021, 12, 10, 10, 11, 12))
-                .importantYn(true)
-                .completedYn(false)
+                .important(true)
+                .completed(false)
                 .createdAt(LocalDateTime.of(2021, 12, 9, 20, 0, 0))
                 .updatedAt(LocalDateTime.of(2021, 12, 9, 20, 0, 0))
                 .build();
@@ -41,8 +40,8 @@ public class TodoMapperTests {
         Assertions.assertEquals(todo.getId(), foundTodo.getId());
         Assertions.assertEquals(todo.getContent(), foundTodo.getContent());
         Assertions.assertEquals(todo.getExpiredAt(), foundTodo.getExpiredAt());
-        Assertions.assertEquals(todo.isImportantYn(), foundTodo.isImportantYn());
-        Assertions.assertEquals(todo.isCompletedYn(), foundTodo.isCompletedYn());
+        Assertions.assertEquals(todo.isImportant(), foundTodo.isImportant());
+        Assertions.assertEquals(todo.isCompleted(), foundTodo.isCompleted());
         Assertions.assertEquals(todo.getCreatedAt(), foundTodo.getCreatedAt());
         Assertions.assertEquals(todo.getUpdatedAt(), foundTodo.getUpdatedAt());
     }
@@ -54,8 +53,8 @@ public class TodoMapperTests {
                 .id(IdGenerator.getInstance().generate())
                 .content("test")
                 .expiredAt(LocalDateTime.of(2021, 12, 10, 10, 11, 12))
-                .importantYn(true)
-                .completedYn(false)
+                .important(true)
+                .completed(false)
                 .createdAt(LocalDateTime.of(2021, 12, 9, 20, 0, 0))
                 .updatedAt(LocalDateTime.of(2021, 12, 9, 20, 0, 0))
                 .build();

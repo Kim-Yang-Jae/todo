@@ -11,9 +11,9 @@ public class TodoRequest {
 
     private long expiredAt;
 
-    private boolean importantYn;
+    private boolean important;
 
-    private boolean completedYn;
+    private boolean completed;
 
     private long createdAt;
 
