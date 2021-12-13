@@ -1,13 +1,16 @@
 package com.kyj.todo.controller;
 
+import com.kyj.todo.config.SwaggerTag;
 import com.kyj.todo.model.TodoView;
 import com.kyj.todo.model.payload.GetTodosResponse;
 import com.kyj.todo.model.payload.SaveTodoResponse;
 import com.kyj.todo.model.payload.TodoRequest;
 import com.kyj.todo.service.TodoService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+@Tag(name = SwaggerTag.Todo.TAG, description = SwaggerTag.Todo.DESC)
 @RestController
 @RequestMapping("/api/todos")
 @RequiredArgsConstructor
