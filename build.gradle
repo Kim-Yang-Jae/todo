@@ -12,42 +12,28 @@ repositories {
 	mavenCentral()
 }
 
-ext{
-	mybatis_starter_version = "2.2.0"
-	mysql_connector_version = "8.0.27"
-
-	commons_lang_version = "3.12.0"
-	commons_collection_version = "4.4"
-
-	embedded_redis_version = "0.7.2"
-
-	spingdoc_openapi_version = "1.5.12"
-}
-
-
 dependencies {
-	implementation("org.springframework.boot:spring-boot-starter-data-jdbc")
-//	implementation("org.springframework.boot:spring-boot-starter-data-redis")
-	implementation("org.springframework.boot:spring-boot-starter-web")
-	implementation("org.springframework.boot:spring-boot-starter-data-rest")
+	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+//	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-data-rest'
 
-	implementation("org.mybatis.spring.boot:mybatis-spring-boot-starter:$mybatis_starter_version")
-	implementation("mysql:mysql-connector-java:$mysql_connector_version")
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.0'
+	implementation 'mysql:mysql-connector-java:8.0.27'
 
-	implementation("org.apache.commons:commons-lang3:$commons_lang_version")
-	implementation("org.apache.commons:commons-collections4:$commons_collection_version")
+	implementation 'org.apache.commons:commons-lang3:3.12.0'
+	implementation 'org.apache.commons:commons-collections4:4.4'
 
-	implementation("it.ozimov:embedded-redis:$embedded_redis_version")
+	implementation 'it.ozimov:embedded-redis:0.7.2'
 
-	annotationProcessor("org.projectlombok:lombok")
-	compileOnly("org.projectlombok:lombok")
-	implementation("org.springdoc:springdoc-openapi-ui:$spingdoc_openapi_version")
+	annotationProcessor 'org.projectlombok:lombok'
+	compileOnly 'org.projectlombok:lombok'
 
-	testImplementation("org.springframework.boot:spring-boot-starter-test")
-	testImplementation("org.mybatis.spring.boot:mybatis-spring-boot-starter-test:2.2.0")
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:2.2.0'
 
-	testAnnotationProcessor("org.projectlombok:lombok")
-	testCompileOnly("org.projectlombok:lombok")
+	testAnnotationProcessor 'org.projectlombok:lombok'
+	testCompileOnly 'org.projectlombok:lombok'
 }
 
 test {

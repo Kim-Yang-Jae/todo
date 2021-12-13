@@ -3,9 +3,8 @@ spring:
     active: local
     include:
       - datasource
-      - logging
       - mybatis
-      - swagger
+      - logging
   application:
     name: todo
 
