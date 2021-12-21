@@ -15,4 +15,4 @@ spring:
       on-profile: real
 
 logging:
-  config: classpath:logging/logback-local.xml
+  config: classpath:logging/logback-real.xml

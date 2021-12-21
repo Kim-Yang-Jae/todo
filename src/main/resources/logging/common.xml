@@ -3,7 +3,7 @@
     <springProperty name="APP_NAME" source="spring.application.name"/>
     <springProperty name="SEVER_PORT" source="sever.port"/>
 
-    <property name="LOG_PATH" value="/mnt/development/todo/logs/${APP_NAME}_${SERVER_PORT}"/>
+    <property name="LOG_PATH" value="/home/ubuntu/logs/${APP_NAME}_${SERVER_PORT}"/>
     <property name="LOG_FILE" value="${LOG_PATH}/${APP_NAME}"/>
     <property name="LOG_BACKUP" value="${LOG_PATH}/archived/${APP_NAME}"/>
 
