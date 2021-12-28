@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <included>
     <springProperty name="APP_NAME" source="spring.application.name"/>
-    <springProperty name="SEVER_PORT" source="sever.port"/>
+    <springProperty name="SERVER_PORT" source="server.port"/>
 
     <property name="LOG_PATH" value="/home/ubuntu/logs/${APP_NAME}_${SERVER_PORT}"/>
     <property name="LOG_FILE" value="${LOG_PATH}/${APP_NAME}"/>
